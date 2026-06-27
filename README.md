@@ -1,16 +1,50 @@
-# React + Vite
+# PopX App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive React-based static web application that simulates a basic authentication flow using Local Storage.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* User Registration with form validation.
+* User Login with credential verification.
+* Authentication handled using Local Storage.
+* Toast notifications for success and error states.
+* Responsive mobile-first UI inspired by the provided design.
 
-## React Compiler
+## Authentication Flow
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* If a user attempts to log in without having a registered account in Local Storage, they are shown an error toast:
 
-## Expanding the Oxlint configuration
+  **"Invalid Credentials. Register Yourself."**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+  and are redirected to the Registration page.
+
+* During registration, user details are validated and stored in Local Storage.
+
+* On successful login with matching credentials, the user is redirected to the Home page.
+
+* The Home page displays:
+
+  * User Full Name
+  * User Email Address
+
+* In the absence of user data, default fallback values are displayed.
+
+## Tech Stack
+
+* React.js
+* React Router DOM
+* Tailwind CSS
+* React Hot Toast
+* Local Storage
+
+## Future Improvements
+
+Due to time constraints, the following enhancements could not be implemented:
+
+* Loading states and skeleton loaders
+* Protected routes
+* Session management
+* Password visibility toggle
+* Form validation using dedicated libraries (React Hook Form / Zod)
+* Backend authentication integration
+
